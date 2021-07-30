@@ -1,0 +1,23 @@
+{
+  "name": "node_zero_hero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "custom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silanka007/node_zero_hero.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silanka007/node_zero_hero/issues"
+  },
+  "homepage": "https://github.com/silanka007/node_zero_hero#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
