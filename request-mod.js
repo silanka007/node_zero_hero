@@ -1,4 +1,5 @@
 const {get} = require('https')
+const {name} = require('./test')
 
 
 // get: specific for get requests, otherwise use request
@@ -12,3 +13,5 @@ get('https://jsonplaceholder.typicode.com/users/1', (resp) => {
     console.log({data})
   })
 })
+
+console.log('required: ', require.cache)
