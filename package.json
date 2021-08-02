@@ -4,8 +4,8 @@
   "description": "",
   "main": "custom.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,8 @@
   "homepage": "https://github.com/silanka007/node_zero_hero#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "csv-parse": "^4.16.0"
+    "csv-parse": "^4.16.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
