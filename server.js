@@ -1,30 +1,33 @@
-const express = require('express')
+const express = require("express");
+const { logger } = require("./middlewares/logger");
 
-const app = express()
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use((req, res, next) => {
-  const start = Date.now()
-  console.log('res: ', res.statusCode)
-  next()
-  const duration = Date.now() - start;
-  console.log(`${req.method} - ${req.url} - ${res.statusCode} : ${duration}ms`)
-})
+// middlewares
+app.use(logger);
 
-app.get('/', (req, res) => {
-  res.send("request successful. here is your response...")
-})
+app.use(express.json())
 
-app.get('/info', (req, res) => {
-  const info = {
-    name: "Paul Silanka",
-    stack : "FullStack",
-    tech: ["JavaScript", "Python"]
-  }
-  res.status(206).json(info)
-})
+app.get("/", (req, res) => {
+  res.send("request successful. here is your response...");
+});
 
+app
+  .route("/info")
+  .get((req, res) => {
+    const info = {
+      name: "Paul Silanka",
+      stack: "FullStack",
+      tech: ["JavaScript", "Python"],
+    };
+    res.status(200).json(info);
+  })
+  .post((req, res) => {
+    const body = req.body;
+    return res.status(201).json(body)
+  });
 
 app.listen(PORT, () => {
-  console.log(`server listening on port: ${PORT}!`)
-})
+  console.log(`server listening on port: ${PORT}!`);
+});
