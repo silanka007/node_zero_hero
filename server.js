@@ -7,11 +7,14 @@ const baseRouter = require("./routes/base.router");
 const infoRouter = require("./routes/info.router");
 
 const app = express();
+app.set('view engine', 'hbs')
+app.set('views', path.join(process.cwd(), 'views'))
+
 const PORT = process.env.PORT || 3000;
 
 // middlewares
 app.use(logger);
-app.use("/sites", express.static(path.join(__dirname, "public")));
+app.use("/static", express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
 app.get("/", baseRouter);
