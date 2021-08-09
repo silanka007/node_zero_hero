@@ -1,5 +1,9 @@
+const path = require('path')
+
 function getIndex(req, res) {
-  return res.send("request successful. here is your response...");
+  // return res.sendFile(path.resolve(__dirname, "../index.html"))
+  // return res.sendFile(path.join(__dirname, '..', 'public', 'images', 'skimountain.jpg'))
+  res.render('index.html')
 }
 
 module.exports = {getIndex}
